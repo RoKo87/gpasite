@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './box.vue'
+import App from './testing/box.vue'
 //import router from './router'
 import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';

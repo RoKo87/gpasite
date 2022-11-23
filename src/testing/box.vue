@@ -1,4 +1,5 @@
 <script>
+import child from "./compy.vue"
 let l = 0
 
 
@@ -10,7 +11,9 @@ export default {
       count: 0,
       cuote: '',
       condo: true,
-      lissy: []
+      lissy: [],
+      yoform: "kiddo ona block",
+      wkidsay: "Wachu seih?"
     }
   },
   methods: {
@@ -26,6 +29,9 @@ export default {
       moreLiss() {
         this.lissy.push({ id: l++, says: this.cuote})  
       }
+  },
+  components: {
+    child
   },
   mounted() {
     this.$refs.banana.textContent = 'banana!'
@@ -50,6 +56,10 @@ export default {
   <button @click="toggy">toggle</button>
   <h1 :class="atypec" v-if="condo">ISA KREESMES! :)</h1>
   <h1 :class="red" v-else>EZNO KREESMES :(</h1>
+  <child :txtop="yoform" @response="(msg) => wkidsay = msg" />
+  <p :class="red">{{ wkidsay }}</p>
+  
+  <child>{{wkidsay}}</child>
 </template>
 
 <style>
