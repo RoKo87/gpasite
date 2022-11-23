@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             name: "iphone14",
+            h1c: "h1",
             selectedCity: null,
 		    courses: [
                 {name: 'Math', code: '4.0'},
@@ -28,6 +29,7 @@ export default {
 }
 </script>
 <template>
+    <h1 :class="h1c"> GPA Calculator </h1>
     <!-- <ButtonVK title="Vamsee" />
     <ButtonVK />
     <Button label = "Save" class="p-button-secondary"></Button>
@@ -55,3 +57,9 @@ export default {
         </div>
     </div>
 </template>
+
+<style>
+.h1 {
+    color: green;
+}
+</style>
