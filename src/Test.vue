@@ -7,27 +7,33 @@ export default {
     data() {
         return {
             courses: [
-                { name: 'Math', code: '4.0' },
-                { name: 'Science', code: '3.5' },
-                { name: 'English', code: '3.0' }
+                { name: 'Math', multiplier: '1.0' },
+                { name: 'Science', multiplier: '1.1' },
+                { name: 'English', multiplier: '1.2' }
             ],
             stats: [{
-                selectedCity: null,
+                selectedCourse: null,
                 grade: null,
                 gpa: null,
             },
             {
-                selectedCity: null,
+                selectedCourse: null,
                 grade: null,
                 gpa: null,
             }
-            ]
+            ],
+            totalGpa: 0
+        }
+    },
+    methods: {
+        gpaCount(gpa){
+            alert(this.totalGpa+=gpa)
         }
     }
 }
 </script>
 <template>
     <div v-for="stat in stats">
-        <GpaRow :courses=courses />
+        <GpaRow :courses=courses @gpaCount="gpaCount"/>
     </div>
 </template>
